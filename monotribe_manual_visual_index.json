@@ -1,0 +1,152 @@
+{
+  "source_pdf": "monotribe_manual.pdf",
+  "page_count": 63,
+  "notes": [
+    "This index points to full-page screenshots (PNG) of visually-rich pages (diagrams/tables) from the monotribe manual.",
+    "Use these images as separate 'Knowledge' assets when PDF visual content is not retrievable.",
+    "Pages beyond the English section (French/German/Spanish) contain near-duplicate diagrams; extend similarly if needed."
+  ],
+  "entries": [
+    {
+      "pdf_page": 1,
+      "language": "EN",
+      "kind": "photo",
+      "title": "Cover",
+      "summary": "Product photo and manual cover for Korg monotribe (Analog Ribbon Station).",
+      "keywords": [
+        "cover",
+        "product photo",
+        "monotribe"
+      ],
+      "screenshot": "monotribe_manual_p01.png"
+    },
+    {
+      "pdf_page": 6,
+      "language": "EN",
+      "kind": "diagram",
+      "title": "Block diagram",
+      "summary": "Signal-flow block diagram showing VCO + noise generator + external audio in mixed into VCF→VCA, with LFO/EG modulation, 3-part drums, sequencer, and sync I/O.",
+      "keywords": [
+        "block diagram",
+        "signal flow",
+        "VCO",
+        "VCF",
+        "VCA",
+        "LFO",
+        "EG",
+        "drums",
+        "sequencer",
+        "sync"
+      ],
+      "screenshot": "monotribe_manual_p06.png"
+    },
+    {
+      "pdf_page": 7,
+      "language": "EN",
+      "kind": "diagram",
+      "title": "Getting started & batteries",
+      "summary": "Battery installation guidance with battery compartment diagram; also explains battery level indication via step LEDs.",
+      "keywords": [
+        "batteries",
+        "battery compartment",
+        "battery level",
+        "step LEDs"
+      ],
+      "screenshot": "monotribe_manual_p07.png"
+    },
+    {
+      "pdf_page": 8,
+      "language": "EN",
+      "kind": "diagram",
+      "title": "Connections",
+      "summary": "Rear-panel jack diagram plus example cabling (AC adapter, audio in/out, headphones, sync in/out).",
+      "keywords": [
+        "connections",
+        "rear panel",
+        "jacks",
+        "audio in",
+        "audio out",
+        "headphones",
+        "sync"
+      ],
+      "screenshot": "monotribe_manual_p08.png"
+    },
+    {
+      "pdf_page": 10,
+      "language": "EN",
+      "kind": "diagram",
+      "title": "Panel overview (Synthesizer section)",
+      "summary": "Top-panel layout diagram with numbered controls for VCO/VCF/VCA/LFO and related switches/knobs; used to map control identity and grouping.",
+      "keywords": [
+        "panel",
+        "layout",
+        "synthesizer section",
+        "controls",
+        "numbered diagram"
+      ],
+      "screenshot": "monotribe_manual_p10.png"
+    },
+    {
+      "pdf_page": 13,
+      "language": "EN",
+      "kind": "diagram",
+      "title": "Panel overview (Sequencer section)",
+      "summary": "Top-panel layout diagram emphasizing sequencer controls (part buttons/LEDs, active step, transport, flux, gate time, etc.) with numbered callouts.",
+      "keywords": [
+        "sequencer section",
+        "panel",
+        "layout",
+        "step sequencer",
+        "transport",
+        "active step"
+      ],
+      "screenshot": "monotribe_manual_p13.png"
+    },
+    {
+      "pdf_page": 14,
+      "language": "EN",
+      "kind": "diagram",
+      "title": "Basic controls (step/part concept)",
+      "summary": "Includes small schematic mapping step buttons to ON/OFF states and illustrates how PART buttons relate to step rows.",
+      "keywords": [
+        "basic controls",
+        "part LEDs",
+        "step buttons",
+        "on off"
+      ],
+      "screenshot": "monotribe_manual_p14.png"
+    },
+    {
+      "pdf_page": 15,
+      "language": "EN",
+      "kind": "diagrams",
+      "title": "Sequencer behavior diagrams",
+      "summary": "Multiple small graphs/diagrams: FLUX ON/OFF pitch curve across steps, gate time proportions, and rhythm step behavior when holding a part button.",
+      "keywords": [
+        "flux",
+        "gate time",
+        "rhythm",
+        "step LEDs",
+        "sequencer behavior"
+      ],
+      "screenshot": "monotribe_manual_p15.png"
+    },
+    {
+      "pdf_page": 16,
+      "language": "EN",
+      "kind": "table+diagram",
+      "title": "Global menu",
+      "summary": "Tables mapping step buttons to global settings (auto power-off, battery type, sync polarity, startup sequence settings, etc.) plus setting procedure diagram.",
+      "keywords": [
+        "global menu",
+        "settings",
+        "auto power off",
+        "battery type",
+        "sync polarity",
+        "tempo range",
+        "procedure"
+      ],
+      "screenshot": "monotribe_manual_p16.png"
+    }
+  ]
+}
