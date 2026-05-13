@@ -5,7 +5,7 @@ It translates information normally conveyed through manuals, labels, panel diagr
 
 <img 
   src="https://github.com/GiuseppeBergamino/Surface-Reader/blob/main/graphical_abstract.png" 
-  style="height: 50%; width: 50%; border: none; display: block; margin: 0 auto;" 
+  style="height: 100%; width: 100%; border: none; display: block; margin: 0 auto;" 
   alt="Block-diagram overview of the Surface Reader concept. An example musical instrument is shown alongside a user interacting with its controls. Real-time inputs (e.g., microphone and camera signals) feed an AI agent that queries curated knowledge stores and outputs non-visual feedback (speech/braille). A user asks: Where is control A, and the system responds: Top-lef corner, A is the first pot."
 />
 
@@ -25,6 +25,6 @@ The 'Declarative_knowledge' folder contains the following resurces:
 
 <img 
   src="https://github.com/GiuseppeBergamino/Surface-Reader/blob/main/concept_macro.png" 
-  style="height: 50%; width: 50%; border: none; display: block; margin: 0 auto;" 
+  style="height: 100%; width: 100%; border: none; display: block; margin: 0 auto;" 
   alt="Block diagram of a surface-reader system. Two side panels provide inputs: Declarative knowledge (Surface ARIA store, device manual store, interaction guidance) and Situated evidence (camera/vision, user confirmations, interaction history). Both feed a central LLM orchestration module that applies a mode profile and a router to select eligible sources and handle uncertainty. The orchestrator reads from and writes validated updates to a bottom surface representation. The system produces speech or refreshable braille output, and situated evidence also grounds updates to the surface representation."
 />
