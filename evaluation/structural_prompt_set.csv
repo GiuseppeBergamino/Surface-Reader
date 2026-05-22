@@ -1,0 +1,18 @@
+ID,Type,Target,Prompt
+all,Whole instrument,Instrument,Create a structured description of the Monotribe.
+b1,Button,PLAY,Create a structured description of the play button.
+b2,Button,REC,Create a structured description of the rec button.
+b3,Button,STEP buttons,Create a structured description of the sequencer section.
+k1,Knob,CUTOFF,Create a structured description of the cutoff.
+k2,Knob,NOISE,Create a structured description of the noise level.
+k3,Knob,RHYTHM,Create a structured description of the rythm level.
+neg1,Knob,Delay time,Create a structured description of the delay time.
+neg2,Switch,Distortion mode,Create a structured description of the distortion mode.
+neg3,Button,Tap tempo,Create a structured description of the tap-tempo button.
+p1,Port,AUDIO IN,Create a structured description of the audio in.
+p2,Port,PHONES OUT,Create a structured description of the headphones out.
+p3,Port,SYNC IN,Create a structured description of the sync in.
+s1,Switch,RANGE,Create a structured description of the keyboard range selector.
+s2,Switch,WAVE,Create a structured description of the VCO wave selector.
+s3,Switch,OCTAVE,Create a structured description of the octave selector.
+,,,

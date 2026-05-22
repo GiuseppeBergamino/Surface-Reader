@@ -1,0 +1,18 @@
+ID,Type,Target,Prompt
+all,Whole instrument,Instrument,Describe what the Monotribe is and what it does.
+b1,Button,PLAY,Which control should I use to start playback? Describe where it is and how to use it.
+b2,Button,REC,Which control should I use to record a sequence? Describe where it is and how to use it.
+b3,Button,STEP buttons,Which controls should I use to work with sequencer steps? Describe where they are and what they do.
+k1,Knob,CUTOFF,Which control should I use to change the filter cutoff? Describe where it is and what it does.
+k2,Knob,NOISE,Which control should I use to increase the noise level? Describe where it is and what it does.
+k3,Knob,RHYTHM,Which control should I use to change the volume of the drum parts? Describe where it is and what it does.
+neg1,Knob,Delay time,Which control should I use to change delay time? Describe where it is and what it does.
+neg2,Switch,Distortion mode,Which control should I use to change distortion mode? Describe where it is and what it does.
+neg3,Button,Tap tempo,Which control should I use for tap tempo? Describe where it is and what it does.
+p1,Port,AUDIO IN,Which port should I use to connect an external audio source? Describe where it is and what it does.
+p2,Port,PHONES OUT,Which port should I use for headphones? Describe where it is and what it does.
+p3,Port,SYNC IN,Which port should I use to synchronize the instrument from an external device? Describe where it is and what it does.
+s1,Switch,RANGE,Which control should I use to change the ribbon keyboard range? Describe where it is and what it does.
+s2,Switch,WAVE,Which control should I use to change the oscillator waveform? Describe where it is and what it does.
+s3,Switch,OCTAVE,Which control should I use to change the oscillator octave? Describe where it is and what it does.
+,,,

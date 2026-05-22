@@ -1,0 +1,18 @@
+ID,Type,Target,Operational Prompt
+all,Whole instrument,Instrument,Represent the whole instrument as Surface ARIA structure
+b1,Button,PLAY,Represent the play button as a Surface ARIA node.
+b2,Button,REC,Represent the rec button as a Surface ARIA node.
+b3,Button,STEP buttons,Represent the step buttons as a Surface ARIA node. 
+k1,Knob,CUTOFF,Represent the cutoff as a Surface ARIA node.
+k2,Knob,NOISE,Represent the noise level as a Surface ARIA node.
+k3,Knob,RHYTHM,Represent the step rythm level as a Surface ARIA node.
+neg1,Knob,Delay time,Represent the delay time as a Surface ARIA node.
+neg2,Switch,Distortion mode,Represent the distortion as a Surface ARIA node.
+neg3,Button,Tap tempo,Represent the tap tempo as a Surface ARIA node.
+p1,Port,AUDIO IN,Represent the audio input as a Surface ARIA node.
+p2,Port,PHONES OUT,Represent the headphones output as a Surface ARIA node.
+p3,Port,SYNC IN,Represent the sync input as a Surface ARIA node.
+s1,Switch,RANGE,Represent the keyboard range control as a Surface ARIA node.
+s2,Switch,WAVE,Represent the oscillator waveform control as a Surface ARIA node.
+s3,Switch,OCTAVE,Represent the oscillator octave control as a Surface ARIA node.
+,,,
