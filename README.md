@@ -55,7 +55,8 @@ This folder contains the prompt sets, scoring rubrics, and raw response material
 - `operational_prompt_set.csv`Complete set of operational prompts. These prompts are goal-oriented and ask how to find or use a target control, connector, or feature.
 - `structural_prompt_set.csv` Complete set of structured-description prompts.
 - `_scoring_rubrics.md` Rubrics used to score operational and structured-description responses.
-- `responses_raw/` Raw model responses copied verbatim, organized by prompt family, agent configuration, and run.
+- `manual_only_baseline/` Raw Manual-only Baseline model responses copied verbatim, organized by prompt family and run.
+- `surface_reader/`Raw Manual-only Baseline model responses copied verbatim, organized by prompt family and run.
 - `bundles_operational/`Aggregated operational-response bundles, grouped by prompt identifier and including the three runs for both agents.
 - `bundles_structural/` Aggregated structured-description bundles, grouped by prompt identifier and including the three runs for both agents.
 
