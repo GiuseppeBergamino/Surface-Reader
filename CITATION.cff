@@ -1,0 +1,32 @@
+
+cff-version: 1.2.0
+message: "If you use these materials in your research, please cite the associated paper."
+
+title: "Surface Reader Companion Repository"
+url: "https://github.com/GiuseppeBergamino/Surface-Reader"
+
+authors:
+  - family-names: Bergamino
+    given-names: Giuseppe
+  - family-names: Fioretti
+    given-names: Michael
+  - family-names: Gabrielli
+    given-names: Leonardo
+  - family-names: Squartini
+    given-names: Stefano
+
+preferred-citation:
+  type: conference-paper
+  title: "Surface Readers: Translating Screen Reader Principles to Musical Hardware"
+  authors:
+    - family-names: Bergamino
+      given-names: Giuseppe
+    - family-names: Fioretti
+      given-names: Michael
+    - family-names: Gabrielli
+      given-names: Leonardo
+    - family-names: Squartini
+      given-names: Stefano
+  conference:
+    name: "ArtsIT 2026"
+  year: 2026
