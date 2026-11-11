@@ -4,7 +4,19 @@ This is the companion repository for the paper:
 
 _Surface Readers: Translating Screen Reader Principles to Musical Hardware_
 
-The repository contains the anonymized materials used to configure and assess the declarative layer of the proposed Surface Reader framework.
+The repository contains the supporting materials used to configure and assess the declarative layer of the proposed Surface Reader framework.
+
+
+## Citation
+
+If you use the materials provided in this repository, please cite the associated paper:
+
+> Bergamino, G., Fioretti, M., Gabrielli, L., Squartini, S. (2026).
+> **Surface Readers: Translating Screen Reader Principles to Musical Hardware.**
+> In: Brooks, A. L. (ed.), *ArtsIT, Interactivity and Game Creation*.
+> ArtsIT 2026. Lecture Notes of the Institute for Computer Sciences,
+> Social Informatics and Telecommunications Engineering. Springer.
+> *(Accepted for publication.)*
 
 ## Overview
 A **Surface Reader** is an assistive layer designed to support blind and low-vision (BLV) musicians in accessing, exploring, learning, and operating hardware musical instruments.
