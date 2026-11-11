@@ -1,0 +1,3167 @@
+{
+  "schema": {
+    "name": "Surface ARIA",
+    "profile": "musical-hardware-semantic-surface",
+    "version": "1.0-draft",
+    "standard_status": "ARIA-inspired project schema; not a W3C WAI-ARIA JSON standard",
+    "language": "it",
+    "node_reference_convention": "nodes are normalized by node_id; children hold references to node_id values"
+  },
+  "device": {
+    "id": "korg_monotribe",
+    "brand": "Korg",
+    "model": "monotribe",
+    "product_name": "Analogue Ribbon Station",
+    "type": "analogue_synthesizer_drum_machine_sequencer",
+    "description": "Sintetizzatore analogico monofonico con ribbon keyboard, generatore ritmico analogico a tre parti e sequencer a otto step.",
+    "dimensions_mm": {
+      "width": 207,
+      "depth": 145,
+      "height": 70
+    },
+    "weight_g_without_batteries": 735,
+    "power_options": [
+      "6 AA alkaline",
+      "6 AA NiMH",
+      "specified optional DC 9V adapter"
+    ],
+    "built_in_speaker": true,
+    "synthesis": {
+      "vco_count": 1,
+      "waveforms": [
+        "sawtooth",
+        "triangle",
+        "square"
+      ],
+      "noise_generator": true,
+      "filter": "12 dB/oct low-pass",
+      "vca_count": 1,
+      "lfo_count": 1,
+      "envelope_modes": [
+        "DECAY",
+        "GATE",
+        "ATTACK"
+      ]
+    },
+    "rhythm_parts": [
+      "BD",
+      "SN",
+      "HH"
+    ],
+    "sequencer_steps": 8,
+    "scope": "hardware e funzioni documentati nel manuale EFGS2; firmware aggiornati non modellati oltre quanto descritto nel manuale"
+  },
+  "coordinate_frame": {
+    "viewpoint": "performer facing top panel",
+    "top": "farthest from performer",
+    "bottom": "closest to performer",
+    "left": "performer left",
+    "right": "performer right"
+  },
+  "evidence_policy": {
+    "knowledge_sources": [
+      "Korg monotribe Owner’s Manual EFGS2, English pp. 5–17",
+      "Surface ARIA Store",
+      "Surface Model and Map Schema",
+      "manual panel diagrams pp. 10, 13",
+      "static top-panel photograph"
+    ],
+    "static_only": true,
+    "current_state_available": false,
+    "meaning_of_unknown": "unknown_requires_situated_evidence: valore/stato fisico corrente non osservato",
+    "numeric_normalization": "nessuna conversione in 0..1 se non documentata; i range ignoti restano non specificati",
+    "source_scope": "pagine del manuale indicate per nodo, non coordinate millimetriche"
+  },
+  "surface_model": {
+    "root": "instrument",
+    "nodes": {
+      "instrument": {
+        "node_id": "instrument",
+        "role": "region",
+        "name": "Korg monotribe",
+        "description": "Analogue ribbon station: sintetizzatore monofonico, generatore analogico a tre parti e sequencer a otto step.",
+        "parent": null,
+        "source": {
+          "document": "manual",
+          "pages": [
+            5,
+            6,
+            10,
+            13
+          ]
+        },
+        "children": [
+          "synthesizer",
+          "sequencer",
+          "performance",
+          "connections",
+          "global_menu"
+        ]
+      },
+      "synthesizer": {
+        "node_id": "synthesizer",
+        "role": "region",
+        "name": "Synthesizer section",
+        "description": "Controlli per generazione, filtraggio, amplificazione e modulazione del suono synth.",
+        "parent": "instrument",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            11,
+            12
+          ]
+        },
+        "children": [
+          "vco",
+          "vcf",
+          "vca_eg",
+          "lfo"
+        ]
+      },
+      "vco": {
+        "node_id": "vco",
+        "role": "group",
+        "name": "VCO",
+        "description": "Oscillatore e generatore di rumore; selezione d’ottava, forma d’onda e modalità ribbon.",
+        "parent": "synthesizer",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            11
+          ]
+        },
+        "children": [
+          "octave",
+          "vco_wave",
+          "noise",
+          "range"
+        ]
+      },
+      "vcf": {
+        "node_id": "vcf",
+        "role": "group",
+        "name": "VCF",
+        "description": "Filtro passa-basso analogico 12 dB/ottava con controllo di taglio e risonanza.",
+        "parent": "synthesizer",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            11
+          ]
+        },
+        "children": [
+          "cutoff",
+          "peak"
+        ]
+      },
+      "vca_eg": {
+        "node_id": "vca_eg",
+        "role": "group",
+        "name": "VCA / EG",
+        "description": "Controllo del livello del synth e della forma dell’inviluppo.",
+        "parent": "synthesizer",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            11,
+            12
+          ]
+        },
+        "children": [
+          "level",
+          "eg"
+        ]
+      },
+      "lfo": {
+        "node_id": "lfo",
+        "role": "group",
+        "name": "LFO",
+        "description": "Modulazione selezionabile del VCO, del VCF o di entrambi.",
+        "parent": "synthesizer",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            12,
+            13
+          ]
+        },
+        "children": [
+          "lfo_rate",
+          "lfo_int",
+          "lfo_target",
+          "lfo_mode",
+          "lfo_wave"
+        ]
+      },
+      "sequencer": {
+        "node_id": "sequencer",
+        "role": "region",
+        "name": "Sequencer section",
+        "description": "Sequencer condiviso da synth, bass drum, snare drum e hi-hat.",
+        "parent": "instrument",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        "children": [
+          "part_selection",
+          "sequence_operation",
+          "step_grid",
+          "sequencer_levels"
+        ]
+      },
+      "part_selection": {
+        "node_id": "part_selection",
+        "role": "group",
+        "name": "PART selection",
+        "description": "Scelta di una delle quattro parti da modificare.",
+        "parent": "sequencer",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14
+          ]
+        },
+        "children": [
+          "part_synth",
+          "part_bd",
+          "part_sn",
+          "part_hh",
+          "led_part_synth",
+          "led_part_bd",
+          "led_part_sn",
+          "led_part_hh"
+        ]
+      },
+      "sequence_operation": {
+        "node_id": "sequence_operation",
+        "role": "group",
+        "name": "Transport and sequence editing",
+        "description": "Riproduzione, registrazione, modalità flux, durata delle note e step attivi.",
+        "parent": "sequencer",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        "children": [
+          "active_step",
+          "flux",
+          "rec",
+          "play",
+          "gate_time",
+          "led_flux",
+          "led_rec",
+          "led_play"
+        ]
+      },
+      "step_grid": {
+        "node_id": "step_grid",
+        "role": "group",
+        "name": "STEP 1–8",
+        "description": "Fila di otto pulsanti con LED associati; condivisi tra parti e Global Menu.",
+        "parent": "sequencer",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        "children": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8",
+          "led_step_1",
+          "led_step_2",
+          "led_step_3",
+          "led_step_4",
+          "led_step_5",
+          "led_step_6",
+          "led_step_7",
+          "led_step_8"
+        ]
+      },
+      "sequencer_levels": {
+        "node_id": "sequencer_levels",
+        "role": "group",
+        "name": "Sequencer continuous controls",
+        "description": "Controllo velocità del sequencer e livello globale delle percussioni.",
+        "parent": "sequencer",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            15
+          ]
+        },
+        "children": [
+          "tempo",
+          "rhythm"
+        ]
+      },
+      "performance": {
+        "node_id": "performance",
+        "role": "region",
+        "name": "Performance input",
+        "description": "Superficie ribbon utilizzata per intonazione, glissati, note cromatiche e gate time.",
+        "parent": "instrument",
+        "source": {
+          "document": "manual",
+          "pages": [
+            11,
+            13,
+            15
+          ]
+        },
+        "children": [
+          "ribbon"
+        ]
+      },
+      "connections": {
+        "node_id": "connections",
+        "role": "region",
+        "name": "Connections and power",
+        "description": "Connettori presenti sul bordo posteriore e controllo di alimentazione.",
+        "parent": "instrument",
+        "source": {
+          "document": "manual",
+          "pages": [
+            7,
+            8,
+            9,
+            17
+          ]
+        },
+        "children": [
+          "power",
+          "dc_9v",
+          "audio_in",
+          "output",
+          "headphones",
+          "sync_out",
+          "sync_in",
+          "grounding_screw"
+        ]
+      },
+      "global_menu": {
+        "node_id": "global_menu",
+        "role": "region",
+        "name": "Global Menu (logical)",
+        "description": "Modalità di configurazione che riutilizza i pulsanti STEP: non sono presenti controlli fisici aggiuntivi.",
+        "parent": "instrument",
+        "source": {
+          "document": "manual",
+          "pages": [
+            16,
+            17
+          ]
+        },
+        "children": [],
+        "uses_controls": [
+          "active_step",
+          "gate_time",
+          "rec",
+          "flux",
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7"
+        ],
+        "virtual": true
+      },
+      "octave": {
+        "node_id": "octave",
+        "role": "switch",
+        "name": "OCTAVE",
+        "description": "Seleziona l’ottava del VCO.",
+        "parent": "vco",
+        "physical_type": "rotary_selector",
+        "actions": [
+          "rotate_to_position"
+        ],
+        "possible_values": [
+          "64'",
+          "32'",
+          "16'",
+          "8'",
+          "4'",
+          "2'"
+        ],
+        "properties": {
+          "position_count": 6,
+          "note": "La selezione non influisce sulla modalità ribbon WIDE."
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            11
+          ]
+        }
+      },
+      "vco_wave": {
+        "node_id": "vco_wave",
+        "role": "switch",
+        "name": "WAVE (VCO)",
+        "description": "Seleziona la forma d’onda dell’oscillatore.",
+        "parent": "vco",
+        "physical_type": "slide_switch",
+        "actions": [
+          "select_position"
+        ],
+        "possible_values": [
+          "sawtooth",
+          "triangle",
+          "square"
+        ],
+        "properties": {
+          "position_count": 3
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            11
+          ]
+        }
+      },
+      "noise": {
+        "node_id": "noise",
+        "role": "slider",
+        "name": "NOISE",
+        "description": "Regola il livello del rumore bianco miscelato all’uscita del VCO.",
+        "parent": "vco",
+        "physical_type": "rotary_knob",
+        "actions": [
+          "turn_clockwise",
+          "turn_counterclockwise"
+        ],
+        "properties": {
+          "value_type": "continuous",
+          "direction": "clockwise_increases"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            11
+          ]
+        }
+      },
+      "range": {
+        "node_id": "range",
+        "role": "switch",
+        "name": "RANGE",
+        "description": "Imposta il comportamento della ribbon keyboard.",
+        "parent": "vco",
+        "physical_type": "slide_switch",
+        "actions": [
+          "select_position"
+        ],
+        "possible_values": [
+          "WIDE",
+          "NARROW",
+          "KEY"
+        ],
+        "properties": {
+          "position_count": 3,
+          "mode_meanings": {
+            "WIDE": "intonazione continua con estensione circa sei volte NARROW; OCTAVE ignorato",
+            "NARROW": "intonazione continua secondo la tastiera stampata",
+            "KEY": "intonazione cromatica a passi discreti"
+          }
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            11
+          ]
+        }
+      },
+      "cutoff": {
+        "node_id": "cutoff",
+        "role": "slider",
+        "name": "CUTOFF",
+        "description": "Regola la frequenza di taglio del filtro: antiorario più scuro, orario più brillante.",
+        "parent": "vcf",
+        "physical_type": "rotary_knob",
+        "actions": [
+          "turn_clockwise",
+          "turn_counterclockwise"
+        ],
+        "properties": {
+          "value_type": "continuous",
+          "direction": "clockwise_brighter"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            11
+          ]
+        }
+      },
+      "peak": {
+        "node_id": "peak",
+        "role": "slider",
+        "name": "PEAK",
+        "description": "Regola la risonanza del VCF, enfatizzando la frequenza di taglio.",
+        "parent": "vcf",
+        "physical_type": "rotary_knob",
+        "actions": [
+          "turn_clockwise",
+          "turn_counterclockwise"
+        ],
+        "properties": {
+          "value_type": "continuous"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            11
+          ]
+        }
+      },
+      "level": {
+        "node_id": "level",
+        "role": "slider",
+        "name": "LEVEL",
+        "description": "Regola il livello audio della parte synth.",
+        "parent": "vca_eg",
+        "physical_type": "rotary_knob",
+        "actions": [
+          "turn_clockwise",
+          "turn_counterclockwise"
+        ],
+        "properties": {
+          "value_type": "continuous"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            11
+          ]
+        }
+      },
+      "eg": {
+        "node_id": "eg",
+        "role": "switch",
+        "name": "EG",
+        "description": "Seleziona la forma dell’inviluppo di ampiezza.",
+        "parent": "vca_eg",
+        "physical_type": "slide_switch",
+        "actions": [
+          "select_position"
+        ],
+        "possible_values": [
+          "DECAY",
+          "GATE",
+          "ATTACK"
+        ],
+        "properties": {
+          "position_count": 3,
+          "mode_meanings": {
+            "DECAY": "inizia al volume massimo e decade",
+            "GATE": "resta al massimo finché la nota è tenuta",
+            "ATTACK": "sale progressivamente al massimo e resta tale mentre la nota è tenuta"
+          }
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            12
+          ]
+        }
+      },
+      "lfo_rate": {
+        "node_id": "lfo_rate",
+        "role": "slider",
+        "name": "RATE",
+        "description": "Regola la velocità dell’LFO.",
+        "parent": "lfo",
+        "physical_type": "rotary_knob",
+        "actions": [
+          "turn_clockwise",
+          "turn_counterclockwise"
+        ],
+        "properties": {
+          "value_type": "continuous",
+          "direction": "clockwise_faster",
+          "mode_dependent_ranges": {
+            "FAST": "circa 1 Hz–5 kHz",
+            "SLOW": "circa 0.05–18 Hz"
+          }
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            12
+          ]
+        }
+      },
+      "lfo_int": {
+        "node_id": "lfo_int",
+        "role": "slider",
+        "name": "INT.",
+        "description": "Regola la profondità della modulazione LFO; tutto a sinistra equivale a nessuna modulazione.",
+        "parent": "lfo",
+        "physical_type": "rotary_knob",
+        "actions": [
+          "turn_clockwise",
+          "turn_counterclockwise"
+        ],
+        "properties": {
+          "value_type": "continuous",
+          "direction": "clockwise_more_intense"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            12
+          ]
+        }
+      },
+      "lfo_target": {
+        "node_id": "lfo_target",
+        "role": "switch",
+        "name": "TARGET",
+        "description": "Sceglie quale parametro viene modulato.",
+        "parent": "lfo",
+        "physical_type": "slide_switch",
+        "actions": [
+          "select_position"
+        ],
+        "possible_values": [
+          "VCO",
+          "VCO+VCF",
+          "VCF"
+        ],
+        "properties": {
+          "position_count": 3,
+          "mode_meanings": {
+            "VCO": "pitch VCO",
+            "VCO+VCF": "pitch VCO e cutoff VCF",
+            "VCF": "cutoff VCF"
+          }
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            12
+          ]
+        }
+      },
+      "lfo_mode": {
+        "node_id": "lfo_mode",
+        "role": "switch",
+        "name": "MODE",
+        "description": "Imposta velocità/intervento dell’LFO.",
+        "parent": "lfo",
+        "physical_type": "slide_switch",
+        "actions": [
+          "select_position"
+        ],
+        "possible_values": [
+          "FAST",
+          "SLOW",
+          "1SHOT"
+        ],
+        "properties": {
+          "position_count": 3,
+          "mode_meanings": {
+            "FAST": "circa 1 Hz–5 kHz",
+            "SLOW": "circa 0.05–18 Hz",
+            "1SHOT": "prima semionda della modulazione all’inizio della nota, poi stop"
+          },
+          "key_sync": [
+            "FAST",
+            "1SHOT"
+          ]
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            12
+          ]
+        }
+      },
+      "lfo_wave": {
+        "node_id": "lfo_wave",
+        "role": "switch",
+        "name": "WAVE (LFO)",
+        "description": "Seleziona la forma d’onda della modulazione.",
+        "parent": "lfo",
+        "physical_type": "slide_switch",
+        "actions": [
+          "select_position"
+        ],
+        "possible_values": [
+          "sawtooth",
+          "triangle",
+          "square"
+        ],
+        "properties": {
+          "position_count": 3
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            10,
+            13
+          ]
+        }
+      },
+      "part_synth": {
+        "node_id": "part_synth",
+        "role": "button",
+        "name": "SYNTH",
+        "description": "Seleziona la sequenza della parte synth.",
+        "parent": "part_selection",
+        "physical_type": "push_button",
+        "actions": [
+          "press"
+        ],
+        "possible_states": [
+          "selected",
+          "not_selected"
+        ],
+        "properties": {
+          "drum_preview_possible": false
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14
+          ]
+        }
+      },
+      "led_part_synth": {
+        "node_id": "led_part_synth",
+        "role": "indicator",
+        "name": "SYNTH LED",
+        "description": "Indicatore della selezione SYNTH; i quattro LED PART lampeggiano insieme quando le batterie sono quasi scariche.",
+        "parent": "part_selection",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit",
+          "blinking"
+        ],
+        "properties": {
+          "meanings": {
+            "lit": "parte selezionata",
+            "blinking_simultaneously_all_parts": "batterie in esaurimento"
+          }
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            7
+          ]
+        }
+      },
+      "part_bd": {
+        "node_id": "part_bd",
+        "role": "button",
+        "name": "BD",
+        "description": "Seleziona la bass drum.",
+        "parent": "part_selection",
+        "physical_type": "push_button",
+        "actions": [
+          "press"
+        ],
+        "possible_states": [
+          "selected",
+          "not_selected"
+        ],
+        "properties": {
+          "drum_preview_possible": true
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14
+          ]
+        }
+      },
+      "led_part_bd": {
+        "node_id": "led_part_bd",
+        "role": "indicator",
+        "name": "BD LED",
+        "description": "Indicatore della selezione BD; i quattro LED PART lampeggiano insieme quando le batterie sono quasi scariche.",
+        "parent": "part_selection",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit",
+          "blinking"
+        ],
+        "properties": {
+          "meanings": {
+            "lit": "parte selezionata",
+            "blinking_simultaneously_all_parts": "batterie in esaurimento"
+          }
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            7
+          ]
+        }
+      },
+      "part_sn": {
+        "node_id": "part_sn",
+        "role": "button",
+        "name": "SN",
+        "description": "Seleziona lo snare drum.",
+        "parent": "part_selection",
+        "physical_type": "push_button",
+        "actions": [
+          "press"
+        ],
+        "possible_states": [
+          "selected",
+          "not_selected"
+        ],
+        "properties": {
+          "drum_preview_possible": true
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14
+          ]
+        }
+      },
+      "led_part_sn": {
+        "node_id": "led_part_sn",
+        "role": "indicator",
+        "name": "SN LED",
+        "description": "Indicatore della selezione SN; i quattro LED PART lampeggiano insieme quando le batterie sono quasi scariche.",
+        "parent": "part_selection",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit",
+          "blinking"
+        ],
+        "properties": {
+          "meanings": {
+            "lit": "parte selezionata",
+            "blinking_simultaneously_all_parts": "batterie in esaurimento"
+          }
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            7
+          ]
+        }
+      },
+      "part_hh": {
+        "node_id": "part_hh",
+        "role": "button",
+        "name": "HH",
+        "description": "Seleziona l’hi-hat.",
+        "parent": "part_selection",
+        "physical_type": "push_button",
+        "actions": [
+          "press"
+        ],
+        "possible_states": [
+          "selected",
+          "not_selected"
+        ],
+        "properties": {
+          "drum_preview_possible": true
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14
+          ]
+        }
+      },
+      "led_part_hh": {
+        "node_id": "led_part_hh",
+        "role": "indicator",
+        "name": "HH LED",
+        "description": "Indicatore della selezione HH; i quattro LED PART lampeggiano insieme quando le batterie sono quasi scariche.",
+        "parent": "part_selection",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit",
+          "blinking"
+        ],
+        "properties": {
+          "meanings": {
+            "lit": "parte selezionata",
+            "blinking_simultaneously_all_parts": "batterie in esaurimento"
+          }
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            7
+          ]
+        }
+      },
+      "active_step": {
+        "node_id": "active_step",
+        "role": "button",
+        "name": "ACTIVE STEP",
+        "description": "Tenendo premuto, ogni STEP abilita/disabilita la propria posizione nel sequencer.",
+        "parent": "sequence_operation",
+        "physical_type": "push_button",
+        "actions": [
+          "hold",
+          "hold_and_press_step"
+        ],
+        "possible_states": [
+          "held",
+          "released"
+        ],
+        "properties": {
+          "constraint": "non è possibile disattivare contemporaneamente tutti gli otto step"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14
+          ]
+        }
+      },
+      "flux": {
+        "node_id": "flux",
+        "role": "button",
+        "name": "FLUX",
+        "description": "Attiva/disattiva la registrazione e riproduzione continua dell’intonazione della parte synth; nel Global Menu annulla le modifiche.",
+        "parent": "sequence_operation",
+        "physical_type": "push_button",
+        "actions": [
+          "press"
+        ],
+        "possible_states": [
+          "on",
+          "off"
+        ],
+        "properties": {
+          "global_menu_action": "cancel"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            17
+          ]
+        }
+      },
+      "rec": {
+        "node_id": "rec",
+        "role": "button",
+        "name": "REC",
+        "description": "Avvia/termina la modalità di registrazione; con sequencer fermo la prepara. Tenuto premuto nelle condizioni indicate salva una sequenza. Nel Global Menu salva le impostazioni.",
+        "parent": "sequence_operation",
+        "physical_type": "push_button",
+        "actions": [
+          "press",
+          "hold"
+        ],
+        "possible_states": [
+          "idle",
+          "record_ready",
+          "recording"
+        ],
+        "properties": {
+          "global_menu_action": "confirm_and_save"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            15,
+            16,
+            17
+          ]
+        }
+      },
+      "play": {
+        "node_id": "play",
+        "role": "button",
+        "name": "PLAY",
+        "description": "Avvia o arresta la sequenza; la riproduzione riparte sempre dall’inizio.",
+        "parent": "sequence_operation",
+        "physical_type": "push_button",
+        "actions": [
+          "press"
+        ],
+        "possible_states": [
+          "stopped",
+          "playing"
+        ],
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14
+          ]
+        }
+      },
+      "gate_time": {
+        "node_id": "gate_time",
+        "role": "button",
+        "name": "GATE TIME",
+        "description": "Tenendo premuto e usando la ribbon durante la riproduzione, modifica la durata delle note synth; in registrazione può memorizzare i valori per step.",
+        "parent": "sequence_operation",
+        "physical_type": "push_button",
+        "actions": [
+          "hold",
+          "hold_and_touch_ribbon"
+        ],
+        "possible_states": [
+          "held",
+          "released"
+        ],
+        "properties": {
+          "gate_range_percent": [
+            1.4,
+            100
+          ]
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            15
+          ]
+        }
+      },
+      "led_flux": {
+        "node_id": "led_flux",
+        "role": "indicator",
+        "name": "FLUX LED",
+        "description": "Indicatore visivo della modalità FLUX.",
+        "parent": "sequence_operation",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit"
+        ],
+        "properties": {
+          "meanings": {
+            "lit": "FLUX attivo",
+            "unlit": "FLUX disattivo"
+          }
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14
+          ]
+        }
+      },
+      "led_rec": {
+        "node_id": "led_rec",
+        "role": "indicator",
+        "name": "REC LED",
+        "description": "Indicatore delle modalità di registrazione.",
+        "parent": "sequence_operation",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "blinking",
+          "unlit"
+        ],
+        "properties": {
+          "meanings": {
+            "lit": "registrazione attiva",
+            "blinking": "registrazione pronta",
+            "unlit": "nessuna registrazione attiva"
+          }
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            15,
+            16
+          ]
+        }
+      },
+      "led_play": {
+        "node_id": "led_play",
+        "role": "indicator",
+        "name": "PLAY LED",
+        "description": "Indicatore della riproduzione della sequenza.",
+        "parent": "sequence_operation",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit"
+        ],
+        "properties": {
+          "meanings": {
+            "lit": "sequencer in riproduzione",
+            "unlit": "sequencer non in riproduzione"
+          }
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14
+          ]
+        }
+      },
+      "step_1": {
+        "node_id": "step_1",
+        "role": "button",
+        "name": "STEP 1",
+        "description": "Gestisce lo step 1 della parte selezionata; può essere riutilizzato per impostazioni di sistema nel Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "rectangular_push_button",
+        "actions": [
+          "press",
+          "press_while_holding_part",
+          "press_while_holding_active_step"
+        ],
+        "possible_states": [
+          "enabled",
+          "disabled"
+        ],
+        "properties": {
+          "index": 1,
+          "role_depends_on": [
+            "selected_part",
+            "active_step_held",
+            "global_menu_active"
+          ],
+          "global_menu_setting": "auto_power_off"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "led_step_1": {
+        "node_id": "led_step_1",
+        "role": "indicator",
+        "name": "STEP 1 LED",
+        "description": "Indicatore dello step 1; assume significati diversi per sequencer, batteria e Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit",
+          "blinking"
+        ],
+        "properties": {
+          "index": 1,
+          "contextual_meanings": {
+            "normal": "lit: step abilitato nella parte selezionata; unlit: step disabilitato",
+            "playback": "blinking: posizione corrente",
+            "active_step_held": "lit: step attivo",
+            "startup": "gli otto LED indicano il livello batteria; se alimentato con adattatore la lettura può essere inattendibile",
+            "global_menu": "lit/unlit/blinking codificano le impostazioni documentate"
+          },
+          "low_battery_note": "STEP 1 lampeggia prima dello spegnimento per batterie completamente esaurite se pertinente."
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            7,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "step_2": {
+        "node_id": "step_2",
+        "role": "button",
+        "name": "STEP 2",
+        "description": "Gestisce lo step 2 della parte selezionata; può essere riutilizzato per impostazioni di sistema nel Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "rectangular_push_button",
+        "actions": [
+          "press",
+          "press_while_holding_part",
+          "press_while_holding_active_step"
+        ],
+        "possible_states": [
+          "enabled",
+          "disabled"
+        ],
+        "properties": {
+          "index": 2,
+          "role_depends_on": [
+            "selected_part",
+            "active_step_held",
+            "global_menu_active"
+          ],
+          "global_menu_setting": "battery_type"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "led_step_2": {
+        "node_id": "led_step_2",
+        "role": "indicator",
+        "name": "STEP 2 LED",
+        "description": "Indicatore dello step 2; assume significati diversi per sequencer, batteria e Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit",
+          "blinking"
+        ],
+        "properties": {
+          "index": 2,
+          "contextual_meanings": {
+            "normal": "lit: step abilitato nella parte selezionata; unlit: step disabilitato",
+            "playback": "blinking: posizione corrente",
+            "active_step_held": "lit: step attivo",
+            "startup": "gli otto LED indicano il livello batteria; se alimentato con adattatore la lettura può essere inattendibile",
+            "global_menu": "lit/unlit/blinking codificano le impostazioni documentate"
+          },
+          "low_battery_note": null
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            7,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "step_3": {
+        "node_id": "step_3",
+        "role": "button",
+        "name": "STEP 3",
+        "description": "Gestisce lo step 3 della parte selezionata; può essere riutilizzato per impostazioni di sistema nel Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "rectangular_push_button",
+        "actions": [
+          "press",
+          "press_while_holding_part",
+          "press_while_holding_active_step"
+        ],
+        "possible_states": [
+          "enabled",
+          "disabled"
+        ],
+        "properties": {
+          "index": 3,
+          "role_depends_on": [
+            "selected_part",
+            "active_step_held",
+            "global_menu_active"
+          ],
+          "global_menu_setting": "sync_out_polarity"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "led_step_3": {
+        "node_id": "led_step_3",
+        "role": "indicator",
+        "name": "STEP 3 LED",
+        "description": "Indicatore dello step 3; assume significati diversi per sequencer, batteria e Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit",
+          "blinking"
+        ],
+        "properties": {
+          "index": 3,
+          "contextual_meanings": {
+            "normal": "lit: step abilitato nella parte selezionata; unlit: step disabilitato",
+            "playback": "blinking: posizione corrente",
+            "active_step_held": "lit: step attivo",
+            "startup": "gli otto LED indicano il livello batteria; se alimentato con adattatore la lettura può essere inattendibile",
+            "global_menu": "lit/unlit/blinking codificano le impostazioni documentate"
+          },
+          "low_battery_note": null
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            7,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "step_4": {
+        "node_id": "step_4",
+        "role": "button",
+        "name": "STEP 4",
+        "description": "Gestisce lo step 4 della parte selezionata; può essere riutilizzato per impostazioni di sistema nel Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "rectangular_push_button",
+        "actions": [
+          "press",
+          "press_while_holding_part",
+          "press_while_holding_active_step"
+        ],
+        "possible_states": [
+          "enabled",
+          "disabled"
+        ],
+        "properties": {
+          "index": 4,
+          "role_depends_on": [
+            "selected_part",
+            "active_step_held",
+            "global_menu_active"
+          ],
+          "global_menu_setting": "sync_in_polarity"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "led_step_4": {
+        "node_id": "led_step_4",
+        "role": "indicator",
+        "name": "STEP 4 LED",
+        "description": "Indicatore dello step 4; assume significati diversi per sequencer, batteria e Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit",
+          "blinking"
+        ],
+        "properties": {
+          "index": 4,
+          "contextual_meanings": {
+            "normal": "lit: step abilitato nella parte selezionata; unlit: step disabilitato",
+            "playback": "blinking: posizione corrente",
+            "active_step_held": "lit: step attivo",
+            "startup": "gli otto LED indicano il livello batteria; se alimentato con adattatore la lettura può essere inattendibile",
+            "global_menu": "lit/unlit/blinking codificano le impostazioni documentate"
+          },
+          "low_battery_note": null
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            7,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "step_5": {
+        "node_id": "step_5",
+        "role": "button",
+        "name": "STEP 5",
+        "description": "Gestisce lo step 5 della parte selezionata; può essere riutilizzato per impostazioni di sistema nel Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "rectangular_push_button",
+        "actions": [
+          "press",
+          "press_while_holding_part",
+          "press_while_holding_active_step"
+        ],
+        "possible_states": [
+          "enabled",
+          "disabled"
+        ],
+        "properties": {
+          "index": 5,
+          "role_depends_on": [
+            "selected_part",
+            "active_step_held",
+            "global_menu_active"
+          ],
+          "global_menu_setting": "startup_sequence"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "led_step_5": {
+        "node_id": "led_step_5",
+        "role": "indicator",
+        "name": "STEP 5 LED",
+        "description": "Indicatore dello step 5; assume significati diversi per sequencer, batteria e Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit",
+          "blinking"
+        ],
+        "properties": {
+          "index": 5,
+          "contextual_meanings": {
+            "normal": "lit: step abilitato nella parte selezionata; unlit: step disabilitato",
+            "playback": "blinking: posizione corrente",
+            "active_step_held": "lit: step attivo",
+            "startup": "gli otto LED indicano il livello batteria; se alimentato con adattatore la lettura può essere inattendibile",
+            "global_menu": "lit/unlit/blinking codificano le impostazioni documentate"
+          },
+          "low_battery_note": null
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            7,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "step_6": {
+        "node_id": "step_6",
+        "role": "button",
+        "name": "STEP 6",
+        "description": "Gestisce lo step 6 della parte selezionata; può essere riutilizzato per impostazioni di sistema nel Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "rectangular_push_button",
+        "actions": [
+          "press",
+          "press_while_holding_part",
+          "press_while_holding_active_step"
+        ],
+        "possible_states": [
+          "enabled",
+          "disabled"
+        ],
+        "properties": {
+          "index": 6,
+          "role_depends_on": [
+            "selected_part",
+            "active_step_held",
+            "global_menu_active"
+          ],
+          "global_menu_setting": "drum_preview"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "led_step_6": {
+        "node_id": "led_step_6",
+        "role": "indicator",
+        "name": "STEP 6 LED",
+        "description": "Indicatore dello step 6; assume significati diversi per sequencer, batteria e Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit",
+          "blinking"
+        ],
+        "properties": {
+          "index": 6,
+          "contextual_meanings": {
+            "normal": "lit: step abilitato nella parte selezionata; unlit: step disabilitato",
+            "playback": "blinking: posizione corrente",
+            "active_step_held": "lit: step attivo",
+            "startup": "gli otto LED indicano il livello batteria; se alimentato con adattatore la lettura può essere inattendibile",
+            "global_menu": "lit/unlit/blinking codificano le impostazioni documentate"
+          },
+          "low_battery_note": null
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            7,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "step_7": {
+        "node_id": "step_7",
+        "role": "button",
+        "name": "STEP 7",
+        "description": "Gestisce lo step 7 della parte selezionata; può essere riutilizzato per impostazioni di sistema nel Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "rectangular_push_button",
+        "actions": [
+          "press",
+          "press_while_holding_part",
+          "press_while_holding_active_step"
+        ],
+        "possible_states": [
+          "enabled",
+          "disabled"
+        ],
+        "properties": {
+          "index": 7,
+          "role_depends_on": [
+            "selected_part",
+            "active_step_held",
+            "global_menu_active"
+          ],
+          "global_menu_setting": "tempo_range"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "led_step_7": {
+        "node_id": "led_step_7",
+        "role": "indicator",
+        "name": "STEP 7 LED",
+        "description": "Indicatore dello step 7; assume significati diversi per sequencer, batteria e Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit",
+          "blinking"
+        ],
+        "properties": {
+          "index": 7,
+          "contextual_meanings": {
+            "normal": "lit: step abilitato nella parte selezionata; unlit: step disabilitato",
+            "playback": "blinking: posizione corrente",
+            "active_step_held": "lit: step attivo",
+            "startup": "gli otto LED indicano il livello batteria; se alimentato con adattatore la lettura può essere inattendibile",
+            "global_menu": "lit/unlit/blinking codificano le impostazioni documentate"
+          },
+          "low_battery_note": null
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            7,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "step_8": {
+        "node_id": "step_8",
+        "role": "button",
+        "name": "STEP 8",
+        "description": "Gestisce lo step 8 della parte selezionata; può essere riutilizzato per impostazioni di sistema nel Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "rectangular_push_button",
+        "actions": [
+          "press",
+          "press_while_holding_part",
+          "press_while_holding_active_step"
+        ],
+        "possible_states": [
+          "enabled",
+          "disabled"
+        ],
+        "properties": {
+          "index": 8,
+          "role_depends_on": [
+            "selected_part",
+            "active_step_held",
+            "global_menu_active"
+          ],
+          "global_menu_setting": null
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "led_step_8": {
+        "node_id": "led_step_8",
+        "role": "indicator",
+        "name": "STEP 8 LED",
+        "description": "Indicatore dello step 8; assume significati diversi per sequencer, batteria e Global Menu.",
+        "parent": "step_grid",
+        "physical_type": "LED",
+        "possible_states": [
+          "lit",
+          "unlit",
+          "blinking"
+        ],
+        "properties": {
+          "index": 8,
+          "contextual_meanings": {
+            "normal": "lit: step abilitato nella parte selezionata; unlit: step disabilitato",
+            "playback": "blinking: posizione corrente",
+            "active_step_held": "lit: step attivo",
+            "startup": "gli otto LED indicano il livello batteria; se alimentato con adattatore la lettura può essere inattendibile",
+            "global_menu": "lit/unlit/blinking codificano le impostazioni documentate"
+          },
+          "low_battery_note": null
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            7,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      },
+      "tempo": {
+        "node_id": "tempo",
+        "role": "slider",
+        "name": "TEMPO",
+        "description": "Regola la velocità del sequencer (eccetto quando SYNC IN è collegato).",
+        "parent": "sequencer_levels",
+        "physical_type": "rotary_knob",
+        "actions": [
+          "turn_clockwise",
+          "turn_counterclockwise"
+        ],
+        "properties": {
+          "value_type": "continuous",
+          "range_by_global_setting": {
+            "NARROW": {
+              "min": 60,
+              "max": 180,
+              "unit": "BPM"
+            },
+            "WIDE": {
+              "min": 10,
+              "max": 600,
+              "unit": "BPM"
+            }
+          },
+          "sync_in_connection": "knob_disabled"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            14
+          ]
+        }
+      },
+      "rhythm": {
+        "node_id": "rhythm",
+        "role": "slider",
+        "name": "RHYTHM",
+        "description": "Regola il volume della parte drum.",
+        "parent": "sequencer_levels",
+        "physical_type": "rotary_knob",
+        "actions": [
+          "turn_clockwise",
+          "turn_counterclockwise"
+        ],
+        "properties": {
+          "value_type": "continuous"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            13,
+            15
+          ]
+        }
+      },
+      "ribbon": {
+        "node_id": "ribbon",
+        "role": "keyboard",
+        "name": "Ribbon keyboard",
+        "description": "Superficie tattile per eseguire note, variazioni continue di intonazione e, con GATE TIME premuto, variare la durata delle note.",
+        "parent": "performance",
+        "physical_type": "ribbon_touch_surface",
+        "actions": [
+          "touch",
+          "slide",
+          "hold",
+          "release"
+        ],
+        "properties": {
+          "possible_modes": [
+            "WIDE",
+            "NARROW",
+            "KEY"
+          ],
+          "mapping_control": "range",
+          "reference_octave": "con OCTAVE=64', A0–D2 come indicato nel manuale",
+          "gate_time_while_holding_button": "sinistra 1.4%, destra 100%",
+          "current_touch_position": "unknown_requires_situated_evidence"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            11,
+            13,
+            15
+          ]
+        }
+      },
+      "power": {
+        "node_id": "power",
+        "role": "button",
+        "name": "Power switch",
+        "description": "Premere per accendere; tenere premuto per spegnere.",
+        "parent": "connections",
+        "physical_type": "push_button",
+        "actions": [
+          "press",
+          "press_and_hold"
+        ],
+        "possible_states": [
+          "on",
+          "off"
+        ],
+        "safety_notes": [
+          "Spegnere lo strumento prima di collegare dispositivi esterni."
+        ],
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            8,
+            9
+          ]
+        }
+      },
+      "dc_9v": {
+        "node_id": "dc_9v",
+        "role": "port",
+        "name": "DC 9V",
+        "description": "Ingresso per alimentatore opzionale appropriato.",
+        "parent": "connections",
+        "physical_type": "DC_power_jack",
+        "actions": [
+          "connect",
+          "disconnect"
+        ],
+        "properties": {
+          "direction": "input",
+          "signal_type": "power",
+          "supply": "DC 9V; utilizzare esclusivamente l’adattatore specificato"
+        },
+        "safety_notes": [
+          "Spegnere lo strumento prima di collegare l’alimentatore."
+        ],
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            7,
+            8,
+            17
+          ]
+        }
+      },
+      "audio_in": {
+        "node_id": "audio_in",
+        "role": "port",
+        "name": "AUDIO IN",
+        "description": "Ingresso audio esterno, mixato al VCO e inviato attraverso VCF e VCA.",
+        "parent": "connections",
+        "physical_type": "3.5_mm_stereo_mini_jack",
+        "actions": [
+          "connect",
+          "disconnect"
+        ],
+        "properties": {
+          "direction": "input",
+          "signal_type": "audio",
+          "stereo_handling": "segnale stereo sommato in mono"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            5,
+            8,
+            17
+          ]
+        }
+      },
+      "output": {
+        "node_id": "output",
+        "role": "port",
+        "name": "OUTPUT",
+        "description": "Uscita principale verso mixer o diffusori amplificati.",
+        "parent": "connections",
+        "physical_type": "6.3_mm_unbalanced_phone_jack",
+        "actions": [
+          "connect",
+          "disconnect"
+        ],
+        "properties": {
+          "direction": "output",
+          "signal_type": "audio_mono",
+          "accepts_plugs": [
+            "mono",
+            "stereo"
+          ]
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            8,
+            17
+          ]
+        }
+      },
+      "headphones": {
+        "node_id": "headphones",
+        "role": "port",
+        "name": "HEADPHONES",
+        "description": "Uscita per cuffie con minijack stereo.",
+        "parent": "connections",
+        "physical_type": "3.5_mm_stereo_mini_jack",
+        "actions": [
+          "connect",
+          "disconnect"
+        ],
+        "properties": {
+          "direction": "output",
+          "signal_type": "headphones"
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            8,
+            17
+          ]
+        }
+      },
+      "sync_out": {
+        "node_id": "sync_out",
+        "role": "port",
+        "name": "SYNC OUT",
+        "description": "Uscita impulso per sincronizzazione di dispositivi compatibili.",
+        "parent": "connections",
+        "physical_type": "3.5_mm_mono_mini_jack",
+        "actions": [
+          "connect",
+          "disconnect"
+        ],
+        "properties": {
+          "direction": "output",
+          "signal_type": "step_clock_pulse",
+          "pulse_voltage_V": 5,
+          "pulse_duration_ms": 15,
+          "polarity_configurable": true
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            8,
+            17
+          ]
+        }
+      },
+      "sync_in": {
+        "node_id": "sync_in",
+        "role": "port",
+        "name": "SYNC IN",
+        "description": "Ingresso per sincronizzazione esterna del sequencer; sostituisce il clock interno.",
+        "parent": "connections",
+        "physical_type": "3.5_mm_mono_mini_jack",
+        "actions": [
+          "connect",
+          "disconnect"
+        ],
+        "properties": {
+          "direction": "input",
+          "signal_type": "external_step_clock",
+          "max_input_voltage_V": 20,
+          "polarity_configurable": true,
+          "tempo_knob_disabled_when_connected": true
+        },
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            8,
+            14,
+            17
+          ]
+        }
+      },
+      "grounding_screw": {
+        "node_id": "grounding_screw",
+        "role": "port",
+        "name": "Grounding screw",
+        "description": "Vite di collegamento opzionale alla messa a terra esterna.",
+        "parent": "connections",
+        "physical_type": "grounding_screw_terminal",
+        "actions": [
+          "attach_ground_wire"
+        ],
+        "properties": {
+          "direction": "ground",
+          "signal_type": "ground_connection"
+        },
+        "safety_notes": [
+          "Non utilizzare lo strumento con la vite di messa a terra rimossa."
+        ],
+        "current_state": "unknown_requires_situated_evidence",
+        "source": {
+          "document": "manual",
+          "pages": [
+            9
+          ]
+        }
+      }
+    }
+  },
+  "surface_map": {
+    "coordinate_frame": "performer",
+    "entries": {
+      "synthesizer": {
+        "node_id": "synthesizer",
+        "approximate_position": "upper half",
+        "confidence": "high",
+        "landmarks": [
+          "upper edge of panel"
+        ]
+      },
+      "vco": {
+        "node_id": "vco",
+        "approximate_position": "upper-left region",
+        "confidence": "high",
+        "landmarks": [
+          "left edge",
+          "pair of upper controls and pair of lower controls"
+        ]
+      },
+      "octave": {
+        "node_id": "octave",
+        "approximate_position": "upper-left of VCO group",
+        "confidence": "high",
+        "physical_shape": "large rotary selector",
+        "neighbours": {
+          "right": "vco_wave",
+          "below": "noise"
+        },
+        "landmarks": [
+          "upper-left corner of panel"
+        ],
+        "navigation_hint": "Nell’area superiore sinistra individua il selettore rotativo grande: è OCTAVE."
+      },
+      "vco_wave": {
+        "node_id": "vco_wave",
+        "approximate_position": "upper row to the right of OCTAVE",
+        "confidence": "high",
+        "physical_shape": "three-position slide switch",
+        "neighbours": {
+          "left": "octave",
+          "below": "range"
+        }
+      },
+      "noise": {
+        "node_id": "noise",
+        "approximate_position": "lower left in VCO group",
+        "confidence": "high",
+        "physical_shape": "small rotary knob",
+        "neighbours": {
+          "above": "octave",
+          "right": "range"
+        }
+      },
+      "range": {
+        "node_id": "range",
+        "approximate_position": "lower right in VCO group",
+        "confidence": "high",
+        "physical_shape": "three-position slide switch",
+        "neighbours": {
+          "above": "vco_wave",
+          "left": "noise"
+        }
+      },
+      "vcf": {
+        "node_id": "vcf",
+        "approximate_position": "upper centre-left",
+        "confidence": "high",
+        "landmarks": [
+          "vertical pair of large rotary knobs"
+        ]
+      },
+      "cutoff": {
+        "node_id": "cutoff",
+        "approximate_position": "upper knob of VCF pair",
+        "confidence": "high",
+        "physical_shape": "large rotary knob",
+        "neighbours": {
+          "below": "peak"
+        },
+        "landmarks": [
+          "vertical pair of VCF knobs"
+        ],
+        "navigation_hint": "Trova la coppia verticale di manopole del filtro: CUTOFF è quella superiore."
+      },
+      "peak": {
+        "node_id": "peak",
+        "approximate_position": "lower knob of VCF pair",
+        "confidence": "high",
+        "physical_shape": "large rotary knob",
+        "neighbours": {
+          "above": "cutoff"
+        },
+        "landmarks": [
+          "vertical pair of VCF knobs"
+        ],
+        "navigation_hint": "PEAK è la manopola inferiore nella coppia VCF."
+      },
+      "vca_eg": {
+        "node_id": "vca_eg",
+        "approximate_position": "upper-middle",
+        "confidence": "high",
+        "landmarks": [
+          "small LEVEL knob and EG switch below it"
+        ]
+      },
+      "level": {
+        "node_id": "level",
+        "approximate_position": "upper control of VCA section",
+        "confidence": "high",
+        "physical_shape": "small rotary knob",
+        "neighbours": {
+          "below": "eg"
+        }
+      },
+      "eg": {
+        "node_id": "eg",
+        "approximate_position": "below LEVEL in VCA section",
+        "confidence": "high",
+        "physical_shape": "three-position slide switch",
+        "neighbours": {
+          "above": "level"
+        }
+      },
+      "lfo": {
+        "node_id": "lfo",
+        "approximate_position": "upper middle-right",
+        "confidence": "high",
+        "landmarks": [
+          "two rotary knobs in upper row; three slide switches underneath"
+        ]
+      },
+      "lfo_rate": {
+        "node_id": "lfo_rate",
+        "approximate_position": "upper row, left in LFO",
+        "confidence": "high",
+        "physical_shape": "rotary knob",
+        "neighbours": {
+          "right": "lfo_int",
+          "below": "lfo_target"
+        }
+      },
+      "lfo_int": {
+        "node_id": "lfo_int",
+        "approximate_position": "upper row, right in LFO",
+        "confidence": "high",
+        "physical_shape": "rotary knob",
+        "neighbours": {
+          "left": "lfo_rate"
+        }
+      },
+      "lfo_target": {
+        "node_id": "lfo_target",
+        "approximate_position": "lower row, left in LFO",
+        "confidence": "high",
+        "physical_shape": "three-position slide switch",
+        "neighbours": {
+          "above": "lfo_rate",
+          "right": "lfo_mode"
+        }
+      },
+      "lfo_mode": {
+        "node_id": "lfo_mode",
+        "approximate_position": "lower row, centre in LFO",
+        "confidence": "high",
+        "physical_shape": "three-position slide switch",
+        "neighbours": {
+          "left": "lfo_target",
+          "right": "lfo_wave"
+        }
+      },
+      "lfo_wave": {
+        "node_id": "lfo_wave",
+        "approximate_position": "lower row, right in LFO",
+        "confidence": "high",
+        "physical_shape": "three-position slide switch",
+        "neighbours": {
+          "left": "lfo_mode"
+        }
+      },
+      "sequencer": {
+        "node_id": "sequencer",
+        "approximate_position": "middle and lower panel",
+        "confidence": "high",
+        "landmarks": [
+          "two rows of buttons",
+          "ribbon surface"
+        ]
+      },
+      "part_selection": {
+        "node_id": "part_selection",
+        "approximate_position": "mid-left",
+        "confidence": "high",
+        "landmarks": [
+          "row of four buttons SYNTH/BD/SN/HH"
+        ]
+      },
+      "part_synth": {
+        "node_id": "part_synth",
+        "approximate_position": "horizontal row at middle-left",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "row of four part buttons"
+        ],
+        "order_in_group": 1
+      },
+      "led_part_synth": {
+        "node_id": "led_part_synth",
+        "approximate_position": "above corresponding part button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "part_synth"
+        }
+      },
+      "part_bd": {
+        "node_id": "part_bd",
+        "approximate_position": "horizontal row at middle-left",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "row of four part buttons"
+        ],
+        "order_in_group": 2
+      },
+      "led_part_bd": {
+        "node_id": "led_part_bd",
+        "approximate_position": "above corresponding part button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "part_bd"
+        }
+      },
+      "part_sn": {
+        "node_id": "part_sn",
+        "approximate_position": "horizontal row at middle-left",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "row of four part buttons"
+        ],
+        "order_in_group": 3
+      },
+      "led_part_sn": {
+        "node_id": "led_part_sn",
+        "approximate_position": "above corresponding part button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "part_sn"
+        }
+      },
+      "part_hh": {
+        "node_id": "part_hh",
+        "approximate_position": "horizontal row at middle-left",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "row of four part buttons"
+        ],
+        "order_in_group": 4
+      },
+      "led_part_hh": {
+        "node_id": "led_part_hh",
+        "approximate_position": "above corresponding part button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "part_hh"
+        }
+      },
+      "sequence_operation": {
+        "node_id": "sequence_operation",
+        "approximate_position": "lower-left and mid-left",
+        "confidence": "high",
+        "landmarks": [
+          "left buttons below part selection"
+        ]
+      },
+      "active_step": {
+        "node_id": "active_step",
+        "approximate_position": "right end of part-selection row",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "neighbours": {
+          "left": "part_hh"
+        }
+      },
+      "flux": {
+        "node_id": "flux",
+        "approximate_position": "bottom-left row",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "row of four buttons beneath part-selection row"
+        ],
+        "order_in_group": 1
+      },
+      "rec": {
+        "node_id": "rec",
+        "approximate_position": "bottom-left row",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "row of four buttons beneath part-selection row"
+        ],
+        "order_in_group": 2
+      },
+      "play": {
+        "node_id": "play",
+        "approximate_position": "bottom-left row",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "row of four buttons beneath part-selection row"
+        ],
+        "order_in_group": 3
+      },
+      "gate_time": {
+        "node_id": "gate_time",
+        "approximate_position": "bottom-left row",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "row of four buttons beneath part-selection row"
+        ],
+        "order_in_group": 4
+      },
+      "led_flux": {
+        "node_id": "led_flux",
+        "approximate_position": "above corresponding function button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "flux"
+        }
+      },
+      "led_rec": {
+        "node_id": "led_rec",
+        "approximate_position": "above corresponding function button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "rec"
+        }
+      },
+      "led_play": {
+        "node_id": "led_play",
+        "approximate_position": "above corresponding function button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "play"
+        }
+      },
+      "step_grid": {
+        "node_id": "step_grid",
+        "approximate_position": "middle-right above ribbon",
+        "confidence": "high",
+        "landmarks": [
+          "eight adjacent step buttons in single row"
+        ]
+      },
+      "step_1": {
+        "node_id": "step_1",
+        "approximate_position": "row across middle-right, above ribbon",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "ribbon keyboard directly below step row"
+        ],
+        "order_in_group": 1
+      },
+      "led_step_1": {
+        "node_id": "led_step_1",
+        "approximate_position": "directly above matching step button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "step_1"
+        },
+        "order_in_group": 1
+      },
+      "step_2": {
+        "node_id": "step_2",
+        "approximate_position": "row across middle-right, above ribbon",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "ribbon keyboard directly below step row"
+        ],
+        "order_in_group": 2
+      },
+      "led_step_2": {
+        "node_id": "led_step_2",
+        "approximate_position": "directly above matching step button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "step_2"
+        },
+        "order_in_group": 2
+      },
+      "step_3": {
+        "node_id": "step_3",
+        "approximate_position": "row across middle-right, above ribbon",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "ribbon keyboard directly below step row"
+        ],
+        "order_in_group": 3
+      },
+      "led_step_3": {
+        "node_id": "led_step_3",
+        "approximate_position": "directly above matching step button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "step_3"
+        },
+        "order_in_group": 3
+      },
+      "step_4": {
+        "node_id": "step_4",
+        "approximate_position": "row across middle-right, above ribbon",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "ribbon keyboard directly below step row"
+        ],
+        "order_in_group": 4
+      },
+      "led_step_4": {
+        "node_id": "led_step_4",
+        "approximate_position": "directly above matching step button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "step_4"
+        },
+        "order_in_group": 4
+      },
+      "step_5": {
+        "node_id": "step_5",
+        "approximate_position": "row across middle-right, above ribbon",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "ribbon keyboard directly below step row"
+        ],
+        "order_in_group": 5
+      },
+      "led_step_5": {
+        "node_id": "led_step_5",
+        "approximate_position": "directly above matching step button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "step_5"
+        },
+        "order_in_group": 5
+      },
+      "step_6": {
+        "node_id": "step_6",
+        "approximate_position": "row across middle-right, above ribbon",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "ribbon keyboard directly below step row"
+        ],
+        "order_in_group": 6
+      },
+      "led_step_6": {
+        "node_id": "led_step_6",
+        "approximate_position": "directly above matching step button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "step_6"
+        },
+        "order_in_group": 6
+      },
+      "step_7": {
+        "node_id": "step_7",
+        "approximate_position": "row across middle-right, above ribbon",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "ribbon keyboard directly below step row"
+        ],
+        "order_in_group": 7
+      },
+      "led_step_7": {
+        "node_id": "led_step_7",
+        "approximate_position": "directly above matching step button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "step_7"
+        },
+        "order_in_group": 7
+      },
+      "step_8": {
+        "node_id": "step_8",
+        "approximate_position": "row across middle-right, above ribbon",
+        "confidence": "high",
+        "physical_shape": "rectangular push button",
+        "landmarks": [
+          "ribbon keyboard directly below step row"
+        ],
+        "order_in_group": 8
+      },
+      "led_step_8": {
+        "node_id": "led_step_8",
+        "approximate_position": "directly above matching step button",
+        "confidence": "high",
+        "physical_shape": "LED",
+        "neighbours": {
+          "below": "step_8"
+        },
+        "order_in_group": 8
+      },
+      "sequencer_levels": {
+        "node_id": "sequencer_levels",
+        "approximate_position": "right side of top panel",
+        "confidence": "medium",
+        "landmarks": [
+          "two rotary knobs associated with sequencer/drums"
+        ]
+      },
+      "tempo": {
+        "node_id": "tempo",
+        "approximate_position": "right-hand area of top panel",
+        "confidence": "medium",
+        "physical_shape": "rotary knob"
+      },
+      "rhythm": {
+        "node_id": "rhythm",
+        "approximate_position": "right-hand area of top panel",
+        "confidence": "medium",
+        "physical_shape": "rotary knob"
+      },
+      "performance": {
+        "node_id": "performance",
+        "approximate_position": "bottom-right region",
+        "confidence": "high",
+        "landmarks": [
+          "long horizontal touch ribbon"
+        ]
+      },
+      "ribbon": {
+        "node_id": "ribbon",
+        "approximate_position": "lower-right area of panel",
+        "confidence": "high",
+        "physical_shape": "horizontal ribbon touch surface",
+        "landmarks": [
+          "right and lower edges",
+          "step button row directly above"
+        ],
+        "navigation_hint": "Sul lato inferiore destro individua la lunga superficie ribbon; sopra si trova la fila di otto pulsanti STEP."
+      },
+      "connections": {
+        "node_id": "connections",
+        "approximate_position": "rear/top edge of unit",
+        "confidence": "high",
+        "landmarks": [
+          "row of jack sockets on rear edge"
+        ]
+      },
+      "power": {
+        "node_id": "power",
+        "approximate_position": "rear/top connection edge",
+        "confidence": "medium"
+      },
+      "dc_9v": {
+        "node_id": "dc_9v",
+        "approximate_position": "rear/top connection edge",
+        "confidence": "medium"
+      },
+      "audio_in": {
+        "node_id": "audio_in",
+        "approximate_position": "rear/top connection edge",
+        "confidence": "medium"
+      },
+      "output": {
+        "node_id": "output",
+        "approximate_position": "rear/top connection edge",
+        "confidence": "medium"
+      },
+      "headphones": {
+        "node_id": "headphones",
+        "approximate_position": "rear/top connection edge",
+        "confidence": "medium"
+      },
+      "sync_out": {
+        "node_id": "sync_out",
+        "approximate_position": "rear/top connection edge",
+        "confidence": "medium"
+      },
+      "sync_in": {
+        "node_id": "sync_in",
+        "approximate_position": "rear/top connection edge",
+        "confidence": "medium"
+      },
+      "grounding_screw": {
+        "node_id": "grounding_screw",
+        "approximate_position": "rear side, location requires confirmation",
+        "confidence": "low"
+      }
+    },
+    "confidence_note": "Le posizioni relative principali sono confermate dal layout statico; non sono fornite coordinate millimetriche."
+  },
+  "interaction_logic": {
+    "part_selection": {
+      "part_buttons": [
+        "part_synth",
+        "part_bd",
+        "part_sn",
+        "part_hh"
+      ],
+      "part_indicator_mapping": {
+        "part_synth": "led_part_synth",
+        "part_bd": "led_part_bd",
+        "part_sn": "led_part_sn",
+        "part_hh": "led_part_hh"
+      },
+      "selected_part_state": "unknown"
+    },
+    "step_button_contexts": [
+      {
+        "context": "part_synth_selected",
+        "buttons": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8"
+        ],
+        "effect": "enable_or_disable_synth_step"
+      },
+      {
+        "context": "part_bd_or_sn_or_hh_selected",
+        "buttons": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8"
+        ],
+        "effect": "enable_or_disable_step_of_selected_drum_part"
+      },
+      {
+        "context": "active_step_held",
+        "buttons": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8"
+        ],
+        "effect": "enable_or_skip_step_in_sequencer",
+        "constraint": "at least one step must remain active"
+      },
+      {
+        "context": "drum_part_button_held",
+        "buttons": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7",
+          "step_8"
+        ],
+        "effect": "place the drum hit halfway through step; 16 effective positions"
+      },
+      {
+        "context": "global_menu",
+        "buttons": [
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4",
+          "step_5",
+          "step_6",
+          "step_7"
+        ],
+        "effect": "configure_global_setting"
+      }
+    ],
+    "ribbon_contexts": [
+      {
+        "context": "normal_play",
+        "depends_on": [
+          "range",
+          "octave"
+        ],
+        "effect": "pitch input"
+      },
+      {
+        "context": "gate_time_held",
+        "depends_on": [
+          "gate_time"
+        ],
+        "effect": "gate time from ~1.4% at left to 100% at right"
+      }
+    ],
+    "visual_indicators": {
+      "part_leds": [
+        "led_part_synth",
+        "led_part_bd",
+        "led_part_sn",
+        "led_part_hh"
+      ],
+      "step_leds": [
+        "led_step_1",
+        "led_step_2",
+        "led_step_3",
+        "led_step_4",
+        "led_step_5",
+        "led_step_6",
+        "led_step_7",
+        "led_step_8"
+      ],
+      "transport_and_mode_leds": [
+        "led_flux",
+        "led_rec",
+        "led_play"
+      ]
+    },
+    "signal_flow": {
+      "synth_audio": [
+        "VCO + NOISE + AUDIO IN",
+        "VCF",
+        "VCA",
+        "AUDIO OUT"
+      ],
+      "rhythm_audio": [
+        "BD + SN + HH",
+        "RHYTHM level",
+        "AUDIO OUT"
+      ],
+      "synchronisation": [
+        "SYNC IN",
+        "internal sequencer clock overridden when connected",
+        "SYNC OUT"
+      ],
+      "modulation": [
+        "LFO -> VCO pitch and/or VCF cutoff",
+        "EG -> VCA amplitude"
+      ]
+    }
+  },
+  "global_menu": {
+    "node_id": "global_menu",
+    "physical_controls_reused": true,
+    "enter_sequence": [
+      "hold ACTIVE STEP",
+      "hold GATE TIME",
+      "press POWER while holding both"
+    ],
+    "configure": "press STEP 1–7, read corresponding LED meaning; current state cannot be sensed statically",
+    "save_and_exit": "press REC",
+    "cancel_and_exit": "press FLUX",
+    "settings": [
+      {
+        "setting_id": "auto_power_off",
+        "control_node_id": "step_1",
+        "indicator_node_id": "led_step_1",
+        "possible_led_states": {
+          "unlit": "disabled",
+          "lit": "enabled"
+        },
+        "factory_default_led_state": "lit",
+        "factory_default_value": "enabled"
+      },
+      {
+        "setting_id": "battery_type",
+        "control_node_id": "step_2",
+        "indicator_node_id": "led_step_2",
+        "possible_led_states": {
+          "unlit": "alkaline",
+          "lit": "nickel_metal_hydride"
+        },
+        "factory_default_led_state": "unlit",
+        "factory_default_value": "alkaline"
+      },
+      {
+        "setting_id": "sync_out_polarity",
+        "control_node_id": "step_3",
+        "indicator_node_id": "led_step_3",
+        "possible_led_states": {
+          "unlit": "rising_edge",
+          "lit": "falling_edge"
+        },
+        "factory_default_led_state": "unlit",
+        "factory_default_value": "rising_edge"
+      },
+      {
+        "setting_id": "sync_in_polarity",
+        "control_node_id": "step_4",
+        "indicator_node_id": "led_step_4",
+        "possible_led_states": {
+          "unlit": "rising_edge",
+          "lit": "falling_edge"
+        },
+        "factory_default_led_state": "unlit",
+        "factory_default_value": "rising_edge"
+      },
+      {
+        "setting_id": "startup_sequence",
+        "control_node_id": "step_5",
+        "indicator_node_id": "led_step_5",
+        "possible_led_states": {
+          "unlit": "initial_sequence",
+          "blinking": "saved_sequence",
+          "lit": "demo_sequence"
+        },
+        "factory_default_led_state": "lit",
+        "factory_default_value": "demo_sequence"
+      },
+      {
+        "setting_id": "drum_preview",
+        "control_node_id": "step_6",
+        "indicator_node_id": "led_step_6",
+        "possible_led_states": {
+          "unlit": "off",
+          "lit": "on"
+        },
+        "factory_default_led_state": "lit",
+        "factory_default_value": "on"
+      },
+      {
+        "setting_id": "tempo_range",
+        "control_node_id": "step_7",
+        "indicator_node_id": "led_step_7",
+        "possible_led_states": {
+          "unlit": "narrow_60_to_180_bpm",
+          "lit": "wide_10_to_600_bpm"
+        },
+        "factory_default_led_state": "lit",
+        "factory_default_value": "wide_10_to_600_bpm"
+      }
+    ],
+    "source": {
+      "document": "manual",
+      "pages": [
+        16,
+        17
+      ]
+    }
+  },
+  "procedures": [
+    {
+      "id": "power_on",
+      "name": "Accensione",
+      "steps": [
+        "Spegnere o abbassare il sistema audio esterno",
+        "Ruotare LEVEL e RHYTHM completamente in senso antiorario",
+        "Premere POWER",
+        "Accendere l’amplificazione esterna dopo l’avvio e regolare gradualmente i livelli"
+      ],
+      "referenced_nodes": [
+        "level",
+        "rhythm",
+        "power"
+      ],
+      "source_pages": [
+        9
+      ]
+    },
+    {
+      "id": "power_off",
+      "name": "Spegnimento",
+      "steps": [
+        "Abbassare il volume del sistema esterno e spegnerlo",
+        "Ruotare LEVEL e RHYTHM completamente in senso antiorario",
+        "Tenere premuto POWER fino a spegnimento dei LED"
+      ],
+      "referenced_nodes": [
+        "level",
+        "rhythm",
+        "power"
+      ],
+      "warnings": [
+        "Non spegnere durante il salvataggio dei dati globali"
+      ],
+      "source_pages": [
+        9
+      ]
+    },
+    {
+      "id": "start_stop_sequence",
+      "name": "Avvio o arresto sequenza",
+      "steps": [
+        "Premere PLAY per avviare la riproduzione",
+        "Premere nuovamente PLAY per arrestarla"
+      ],
+      "referenced_nodes": [
+        "play"
+      ],
+      "source_pages": [
+        14
+      ]
+    },
+    {
+      "id": "record_sequence",
+      "name": "Registrazione della parte synth",
+      "steps": [
+        "Premere REC da fermo per armare oppure durante la riproduzione per entrare subito in REC",
+        "Avviare PLAY se la sequenza era ferma",
+        "Suonare la ribbon keyboard",
+        "Premere REC nuovamente per uscire dalla registrazione"
+      ],
+      "referenced_nodes": [
+        "rec",
+        "play",
+        "ribbon"
+      ],
+      "source_pages": [
+        15
+      ]
+    },
+    {
+      "id": "save_sequence",
+      "name": "Salvataggio sequenza",
+      "preconditions": [
+        "sequencer fermo",
+        "strumento non sta producendo suono"
+      ],
+      "steps": [
+        "Tenere premuto REC finché il LED REC smette di lampeggiare e si spegne"
+      ],
+      "referenced_nodes": [
+        "rec",
+        "led_rec"
+      ],
+      "warnings": [
+        "Non spegnere durante il salvataggio: si rischia perdita o danneggiamento dei dati"
+      ],
+      "source_pages": [
+        16
+      ]
+    },
+    {
+      "id": "edit_active_steps",
+      "name": "Esclusione di step",
+      "steps": [
+        "Tenere premuto ACTIVE STEP",
+        "Premere uno STEP da 1 a 8 per attivarlo/disattivarlo",
+        "Rilasciare ACTIVE STEP"
+      ],
+      "referenced_nodes": [
+        "active_step",
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "step_5",
+        "step_6",
+        "step_7",
+        "step_8"
+      ],
+      "warnings": [
+        "Non è possibile disabilitare tutti gli otto step"
+      ],
+      "source_pages": [
+        14
+      ]
+    },
+    {
+      "id": "edit_gate_time",
+      "name": "Modifica della durata note synth",
+      "steps": [
+        "Durante la riproduzione tenere premuto GATE TIME",
+        "Toccare la ribbon: da circa 1.4% (sinistra) a 100% (destra)",
+        "In registrazione il gate time può essere memorizzato per step"
+      ],
+      "referenced_nodes": [
+        "gate_time",
+        "ribbon"
+      ],
+      "source_pages": [
+        15
+      ]
+    },
+    {
+      "id": "global_menu_edit",
+      "name": "Configurazione Global Menu",
+      "steps": [
+        "Accendere tenendo premuti ACTIVE STEP e GATE TIME",
+        "Premere uno dei pulsanti STEP da 1 a 7 per cambiarne l’impostazione",
+        "Premere REC per salvare e uscire oppure FLUX per annullare"
+      ],
+      "referenced_nodes": [
+        "power",
+        "active_step",
+        "gate_time",
+        "rec",
+        "flux",
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "step_5",
+        "step_6",
+        "step_7"
+      ],
+      "warnings": [
+        "Non spegnere durante la scrittura dei dati"
+      ],
+      "source_pages": [
+        16,
+        17
+      ]
+    }
+  ],
+  "non_visual_guidance": {
+    "reference_landmarks": [
+      "bordo superiore/posteriore con connettori",
+      "coppia verticale di manopole VCF",
+      "gruppo LFO di due manopole e tre selettori",
+      "fila dei quattro pulsanti PART a sinistra",
+      "fila di otto pulsanti STEP sopra la ribbon",
+      "superficie ribbon orizzontale in basso a destra"
+    ],
+    "suggested_exploration_order": [
+      "vco",
+      "vcf",
+      "vca_eg",
+      "lfo",
+      "part_selection",
+      "sequence_operation",
+      "step_grid",
+      "ribbon",
+      "connections"
+    ],
+    "requires_assistance_or_live_evidence": [
+      "posizione corrente dei selettori",
+      "valore delle manopole",
+      "stato dei LED",
+      "connessioni effettive",
+      "posizione delle dita"
+    ],
+    "notes": [
+      "Le indicazioni spaziali sono statiche; la raggiungibilità tattile va verificata con utenti sul dispositivo reale.",
+      "Non affidarsi alle etichette stampate per l’identificazione non visiva."
+    ]
+  },
+  "safety": {
+    "handling": [
+      "Evitare forza eccessiva sui controlli e urti; proteggere da liquidi.",
+      "Spegnere prima di inserire/rimuovere cavi e alimentatore.",
+      "Usare solo l’alimentatore specificato.",
+      "Non rimuovere la vite di messa a terra.",
+      "Non spegnere durante il salvataggio di dati."
+    ]
+  },
+  "sources": [
+    {
+      "id": "manual",
+      "title": "Korg monotribe Owner’s Manual EFGS2",
+      "page_reference": "English printed pages 5–17",
+      "url": "https://cdn.korg.com/us/support/download/files/b31960163ea90723ac54fcc13305f9d7.pdf"
+    },
+    {
+      "id": "surface_aria",
+      "title": "01_surface_aria_store.md",
+      "source_type": "installed Surface Reader skill"
+    },
+    {
+      "id": "map_schema",
+      "title": "05_surface_model_map_schema.md",
+      "source_type": "installed Surface Reader skill"
+    },
+    {
+      "id": "interaction_guidance",
+      "title": "02_interaction_guidance_store.md",
+      "source_type": "installed Surface Reader skill"
+    }
+  ]
+}
